@@ -13,17 +13,10 @@ public class OneTimeTask extends Task {
         this.repeater = RepeatableFactory.getRepeater(this);
     }
 
-    public LocalDate getNextDate() {
-        LocalDate nextDate = LocalDate.now().plusDays(1);
-        return nextDate;
-    }
 
     @Override
     public boolean appearsln(LocalDate localDate) {
-        if (getNextDate().equals(localDate)) {
             return true;
-        }
-        return false;
     }
 
     @Override

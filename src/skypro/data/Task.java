@@ -2,6 +2,7 @@ package skypro.data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import skypro.Type;
@@ -25,7 +26,7 @@ public abstract class Task {
      * this variable better need to be here
      * do it protected to use from extended classes
      */
-    // protected boolean appearssl;
+//     protected boolean appearssl;
     protected Repeater repeater;
 
     public Task(String title, String description, Type type) {
@@ -38,10 +39,12 @@ public abstract class Task {
 
     /**
      * this method is abstract it must be overriden at concreate class
+     *
      * @param localDate
      * @return
      */
     public abstract boolean appearsln(LocalDate localDate);
+
 
     public int getId() {
         return this.id;
@@ -68,7 +71,8 @@ public abstract class Task {
     }
 
     public LocalDateTime getDateTime() {
-        return this.dateTime;
+//        return this.dateTime;
+        return LocalDate.from(this.dateTime).atStartOfDay();
     }
 
     public Repeater getRepeatr() {

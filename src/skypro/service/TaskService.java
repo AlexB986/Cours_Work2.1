@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.Map.Entry;
 
+import skypro.data.OneTimeTask;
 import skypro.data.Task;
 
 /**
@@ -39,7 +40,6 @@ public class TaskService implements IMyDataBaseAbstraction {
         System.out.println("implements your own REMOVE method for a new task");
         return taskMap.remove(id);
     }
-
     @Override
     /**
      * you can change your own data structure to return
@@ -53,9 +53,25 @@ public class TaskService implements IMyDataBaseAbstraction {
             }
         }
         System.out.println("RETURN all by date method for a new task");
-//        return this.taskMap.entrySet().stream().collect(Collectors.toList());
         return list;
     }
+//    element.getValue().getDateTime().toLocalDate().compareTo(localDate)==element.getValue().appearsln()
+//    @Override
+//    /**
+//     * you can change your own data structure to return
+//     */
+//    public List<Task> getAllByData(LocalDate localDate) {
+//        // TODO return your collection by filtering using
+//        List<Task>list = new ArrayList<>();
+//        for (Map.Entry<Integer,Task> element : this.taskMap.entrySet()) {
+//            if(element.getValue().getDateTime().toLocalDate().compareTo(localDate)==0) {
+//                list.add(element.getValue());
+//            }
+//        }
+//        System.out.println("RETURN all by date method for a new task");
+////        return this.taskMap.entrySet().stream().collect(Collectors.toList());
+//        return list;
+//    }
 
     @Override
     public boolean equals(Object o) {

@@ -32,8 +32,6 @@ public class TestDailyPlanner {
                         System.out.println(task.toString());
                         TestDailyPlanner.taskService.add(task);
                     }
-
-
                 } else if (i == 2) {
                     System.out.println("удалить задачу");
                     Task task = removeChoiceTask();// здесь будет логика команды удалять задачи
@@ -41,7 +39,7 @@ public class TestDailyPlanner {
                 } else if (i == 3) {
                     System.out.println("получать список всех задач на предстаящии день");
                     List<Task> taskList = getTasksToNextDay();// здесь будет логика команды получать список задач на предстоящий день
-                    for (Task task :taskList) {
+                    for (Task task : taskList) {
                         System.out.println(task.toString());
                     }
                 } else {
@@ -52,15 +50,10 @@ public class TestDailyPlanner {
                 System.out.println("ВВОД НЕ КОРРЕКТЕН");
                 scanner.nextLine();
             }
-
         }
-
-
     }
 
     private static List<Task> getTasksToNextDay() {
-
-
         List taskList = taskService.getTaskForNextDay();
         return taskList;
     }
@@ -121,8 +114,6 @@ public class TestDailyPlanner {
         Integer id = scanner.nextInt();
         return taskService.remove(id);
     }
-
-
 
 
     static void printMenu() {

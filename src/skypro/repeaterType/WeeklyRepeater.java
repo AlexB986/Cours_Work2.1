@@ -3,7 +3,8 @@ package skypro.repeaterType;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class WeeklyRepeater implements Repeater {
+public class
+WeeklyRepeater implements Repeater {
     private final LocalDateTime dateTime;
 
     private int weekly = 0;

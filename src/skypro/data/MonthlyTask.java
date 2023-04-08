@@ -13,17 +13,10 @@ public class MonthlyTask extends Task {
         this.repeater = RepeatableFactory.getRepeater(this);
     }
 
-    public LocalDate getNextDate() {
-        LocalDate nextDate = LocalDate.now().plusMonths(1);
-        return nextDate;
-    }
 
     @Override
     public boolean appearsln(LocalDate localDate) {
-        if (getNextDate().equals(localDate)) {
-            return true;
-        }
-        return false;
+        return getDateTime().getDayOfMonth()==localDate.getDayOfMonth();
     }
 
     @Override

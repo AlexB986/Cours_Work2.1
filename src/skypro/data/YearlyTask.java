@@ -13,18 +13,13 @@ public class YearlyTask extends Task {
         this.repeater = RepeatableFactory.getRepeater(this);
     }
 
-    public LocalDate getNextDate() {
-        LocalDate nextDate = LocalDate.now().plusYears(1);
-        return nextDate;
-    }
 
     @Override
     public boolean appearsln(LocalDate localDate) {
-        if (getNextDate().equals(localDate)) {
-            return true;
-        }
-        return false;
+        return getDateTime().getMonth()== localDate.getMonth()&&
+                getDateTime().getDayOfMonth()==getDateTime().getDayOfMonth();
     }
+
 
     @Override
     public int hashCode() {

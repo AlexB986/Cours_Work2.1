@@ -16,17 +16,10 @@ public class DailyTask extends Task {
         this.repeater = RepeatableFactory.getRepeater(this);
     }
 
-    public LocalDateTime getNextDate() {
-        LocalDateTime nextDate =this.dateTime.plusDays(10);
-        return nextDate;
-    }
 
     @Override
     public boolean appearsln(LocalDate localDate) {
-        if (getNextDate().equals(localDate)) {
             return true;
-        }
-        return false;
     }
 
     @Override
